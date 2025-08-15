@@ -12,29 +12,36 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        vi v(n);
-        int p = 0;
-        int np = 0;
+        int m = 0, p = 0;
         for(int i=0;i<n;i++) {
-            cin >> v[i];
-            v[i] == -1 ? np++ : p++;
+            int v;
+            cin >> v;
+            if(v == -1) m++;
+            else p++; 
         }
-        if(np <= p && np % 2 == 0) cout << 0 << nl;
-        else {
-
+        int temp = 0;
+        if(m > n/2) {
+            temp = m - n/2;
         }
-
-
+        m = m - temp;
+        cout << (m%2 == 0 ? temp : temp+1) << nl;
     }
 
     return 0;
 }
 
 /*
--1 -1 -1 1 1
+
+-1 -1 1 -1
+m = 3
+n/2 = 2
+
+m  > n/2
+temp = 3 - 2 = 1
+
+m = 3 - 1 = 2
 
 
 
-even the number of -1
-atleast one positive 1
+
 */
