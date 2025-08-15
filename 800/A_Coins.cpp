@@ -10,12 +10,11 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        int n,k;
+        ll n,k;
         cin >> n >> k;
-        if(n % 2 == 0 && k % 2 == 0) {
+        if(n % 2 == 0 || (n - k) % 2 == 0) {
             cout << "YES" << nl;
         } else {
-            if(k % 2 )
             cout << "NO" << nl;
         }
     }
